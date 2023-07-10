@@ -1,4 +1,4 @@
-public abstract class Person {
+public abstract class Person implements StepGet{
     //Человек
 
     public int health;
@@ -11,8 +11,20 @@ public abstract class Person {
 
     @Override
     public String toString() {
+
         return "name: " + name + ", health = " + String.valueOf(health);
     }
+
+    @Override
+    public void step() {
+
+    }
+
+    @Override
+    public String getInfo() {
+        return String.valueOf(name);
+    }
+
 
 }
 

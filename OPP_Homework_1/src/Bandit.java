@@ -6,4 +6,15 @@ public class Bandit extends Person {
     public Bandit() {
         super(100, "Bandit");
     }
+
+    @Override
+    public void step() {
+
+    }
+
+    @Override
+    public String getInfo() {
+        return String.valueOf(name);
+    }
+
 }

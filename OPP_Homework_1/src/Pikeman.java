@@ -6,4 +6,14 @@ public class Pikeman extends Person {
     public Pikeman() {
         super(100, "Pikeman");
     }
+
+    @Override
+    public void step() {
+
+    }
+
+    @Override
+    public String getInfo() {
+        return String.valueOf(name);
+    }
 }

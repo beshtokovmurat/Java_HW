@@ -5,4 +5,15 @@ public class Sniper extends Person {
     public Sniper() {
         super(100, "Sniper");
     }
+
+    @Override
+    public void step() {
+
+    }
+
+    @Override
+    public String getInfo() {
+        return String.valueOf(name);
+    }
+
 }

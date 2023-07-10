@@ -5,4 +5,15 @@ public class Crossbowman extends Person {
     public Crossbowman() {
         super(100, "Crossbowman");
     }
+
+    @Override
+    public void step() {
+
+    }
+
+    @Override
+    public String getInfo() {
+        return String.valueOf(name);
+    }
+
 }

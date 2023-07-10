@@ -5,4 +5,15 @@ public class Mag extends Person{
     public Mag() {
         super(100, "Mag");
     }
+
+    @Override
+    public void step() {
+
+    }
+
+    @Override
+    public String getInfo() {
+        return String.valueOf(name);
+    }
+
 }

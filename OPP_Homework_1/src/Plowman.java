@@ -5,4 +5,15 @@ public class Plowman extends Person {
     public Plowman() {
         super(100, "Plowman");
     }
+
+    @Override
+    public void step() {
+
+    }
+
+    @Override
+    public String getInfo() {
+        return String.valueOf(name);
+    }
+
 }
