@@ -3,7 +3,7 @@ public class Crossbowman extends Person {
     public int reserveArrows;
 
     public Crossbowman() {
-        super(100, "Crossbowman");
+        super(100, "Crossbowman", 0, 3);
     }
 
     @Override

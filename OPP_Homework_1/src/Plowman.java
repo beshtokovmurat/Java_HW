@@ -3,7 +3,7 @@ public class Plowman extends Person {
     public int speed;
 
     public Plowman() {
-        super(100, "Plowman");
+        super(100, "Plowman", 0, 1);
     }
 
     @Override

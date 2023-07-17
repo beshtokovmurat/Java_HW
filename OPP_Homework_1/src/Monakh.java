@@ -3,7 +3,7 @@ public class Monakh extends Person {
     public int giveHealph;
 
     public Monakh() {
-        super(100, "Monakh");
+        super(100, "Monakh", 0 , 7);
     }
 
     @Override

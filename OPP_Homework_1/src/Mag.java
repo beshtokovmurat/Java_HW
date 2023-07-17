@@ -3,7 +3,7 @@ public class Mag extends Person{
     public int giveHealph;
 
     public Mag() {
-        super(100, "Mag");
+        super(100, "Mag", 0, 6);
     }
 
     @Override

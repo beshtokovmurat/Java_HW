@@ -4,7 +4,7 @@ public class Pikeman extends Person {
     public int speed;
 
     public Pikeman() {
-        super(100, "Pikeman");
+        super(100, "Pikeman", 0 , 4);
     }
 
     @Override

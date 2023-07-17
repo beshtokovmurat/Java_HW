@@ -4,7 +4,7 @@ public class Bandit extends Person {
     public int speed;
 
     public Bandit() {
-        super(100, "Bandit");
+        super(100, "Bandit", 0, 5);
     }
 
     @Override

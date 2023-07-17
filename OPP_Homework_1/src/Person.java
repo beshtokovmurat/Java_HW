@@ -1,10 +1,12 @@
+import java.security.PublicKey;
+
 public abstract class Person implements StepGet{
     //Человек
 
     public int health;
     public String name;
 
-    public Person(int health, String name) {
+    public Person(int health, String name, int x, int y) {
         this.health = health;
         if (name != null) this.name = name;
     }
@@ -24,7 +26,6 @@ public abstract class Person implements StepGet{
     public String getInfo() {
         return String.valueOf(name);
     }
-
 
 }
 

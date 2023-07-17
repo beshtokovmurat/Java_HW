@@ -1,5 +1,5 @@
 public enum BaseHero {
-    Mag(50, "Mag"), Monakh(50, "Monakh"), Bandit(50, "Bandit"), Pikeman(50, "Pikeman"), Crossbowman(50, "Crossbowman"), Sniper(50, "Sniper"), Plowman(50, "Plowman");
+    Mag(50, "Mag"), Monakh(50, "Monakh"), Bandit(50, "Bandit"), Pikeman(50, "Pikeman"), Sniper(50, "Sniper"), Crossbowman(50, "Crossbowman"), Plowman(50, "Plowman");
 
     private int health;
     private String name;

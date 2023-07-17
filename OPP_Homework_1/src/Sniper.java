@@ -3,7 +3,7 @@ public class Sniper extends Person {
     public int reserveArrows;
 
     public Sniper() {
-        super(100, "Sniper");
+        super(100, "Sniper", 0, 2);
     }
 
     @Override
