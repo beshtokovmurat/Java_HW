@@ -6,6 +6,15 @@ public class Coordinate_person {
         this.y = y;
     }
 
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+
     public double distance(Coordinate_person coordinate_person) {
         int dx = coordinate_person.x-x;
         int dy = coordinate_person.y-y;

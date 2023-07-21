@@ -6,6 +6,10 @@ public class Monakh extends Person {
         super(100, "Monakh", 0 , 7);
     }
 
+    public void step(Monakh monakh) {
+
+    }
+
     @Override
     public void step() {
 

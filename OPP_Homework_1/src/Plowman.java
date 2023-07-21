@@ -6,9 +6,10 @@ public class Plowman extends Person {
         super(100, "Plowman", 0, 1);
     }
 
+
     @Override
     public void step() {
-
+        
     }
 
     @Override

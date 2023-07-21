@@ -7,6 +7,7 @@ public class Bandit extends Person {
         super(100, "Bandit", 0, 5);
     }
 
+
     @Override
     public void step() {
 
