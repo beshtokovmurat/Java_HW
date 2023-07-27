@@ -4,28 +4,30 @@ public class Crossbowman extends Person {
     // Арбалетчик - имеют запас стрел
     public int reserveArrows;
 
-    public Crossbowman() {
-        super(100, "Crossbowman", 0, 3);
+
+    public Crossbowman(int numberTeam, int health, String name, int x, int y, boolean isLive, String state, int initiative) {
+        super(numberTeam, health, name, x, y, isLive, state, initiative);
     }
 
 
-    public Person FindClosestEnemy(Crossbowman crossbowman, ArrayList<Person> team) {
-        double min = distance(crossbowman.getX(), crossbowman.getY(), team.get(0).getX(), team.get(0).getY());
-        Person teamember1 = crossbowman;
-        for (int i = 0; i < team.size(); i++)
-            if (distance(crossbowman.getX(), crossbowman.getY(), team.get(i).getX(), team.get(i).getY()) < min) {
-                min = distance(crossbowman.getX(), crossbowman.getY(), team.get(i).getX(), team.get(i).getY());
-                teamember1 = team.get(i);
-            }
-        return teamember1;
-    }
+//    public Person FindClosestEnemy(Crossbowman crossbowman, ArrayList<Person> team) {
+//        double min = distance(crossbowman.getX(), crossbowman.getY(), team.get(0).getX(), team.get(0).getY());
+//        Person teamember1 = crossbowman;
+//        for (int i = 0; i < team.size(); i++)
+//            if (distance(crossbowman.getX(), crossbowman.getY(), team.get(i).getX(), team.get(i).getY()) < min) {
+//                min = distance(crossbowman.getX(), crossbowman.getY(), team.get(i).getX(), team.get(i).getY());
+//                teamember1 = team.get(i);
+//            }
+//        return teamember1;
+//    }
 
 
-    public void step(Crossbowman crossbowman, ArrayList<Person> team1, ArrayList<Person> team2) {
+    @Override
+    public void step(ArrayList<Person> team1, ArrayList<Person> team2) {
         if (super.getHealth() == 0 || reserveArrows == 0){
             return;
         }
-        Person ClosestEnemy = FindClosestEnemy(crossbowman, team1);
+        Person ClosestEnemy = FindClosestEnemy(team1);
         doAttack(ClosestEnemy);
         if (team2.contains(Plowman.class)){
             return;
@@ -33,13 +35,9 @@ public class Crossbowman extends Person {
         reserveArrows --;
     }
 
-    @Override
-    public void step() {
-
-    }
 
     @Override
     public String getInfo() {
-        return String.valueOf(name);
+        return super.getInfo();
     }
 }

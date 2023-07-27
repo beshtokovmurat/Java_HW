@@ -4,9 +4,10 @@ public class Sniper extends Person {
     // Снайпер - имеют запас стрел
     public int reserveArrows;
 
-    public Sniper() {
-        super(100, "Sniper", 0, 2);
+    public Sniper(int numberTeam, int health, String name, int x, int y, boolean isLive, String state, int initiative) {
+        super(numberTeam, health, name, x, y, isLive, state, initiative);
     }
+
 
     public void step(Sniper sniper) {
         if (super.getHealth() == 0 || reserveArrows == 0){
@@ -39,15 +40,16 @@ public class Sniper extends Person {
     }
 
     @Override
-    public void step() {
+    public void step(ArrayList<Person> team1, ArrayList<Person> team2) {
 
     }
 
 
     @Override
     public String getInfo() {
-        return String.valueOf(name);
+        return super.getInfo();
     }
+
 
 
 }
