@@ -35,115 +35,65 @@ public class Main {
 //    6.уменьшить кол-во стрел на одну и вернуть управление
 //    Вызывать персонажей из обеих комманд в порядке инициативы.
 
+//    Делаем ход пехоты!
+//    1. Проверяем здоровье
+//    2. Ищем ближайшего врага
+//    3. Двигаемся в сторну врага
+//    4. Не наступаем на живых персонажей
+//    5. Если расстояние до врага одна клетка бём его!
+
 
     public static ArrayList<Person> team1 = new ArrayList();
     public static ArrayList<Person> team2 = new ArrayList();
     public static ArrayList<Person> allTeam = new ArrayList();
 
+
     public static void main(String[] args) {
-//        Mag mag = new Mag();
-//        Monakh monakh = new Monakh();
-//        Bandit bandit = new Bandit();
-//        Pikeman pikeman = new Pikeman();
-//        Sniper sniper = new Sniper();
-//        Crossbowman crossbowman = new Crossbowman();
-//        Plowman plowman = new Plowman();
-//
-//
-//        System.out.println(mag.toString());
-//        System.out.println(monakh.toString());
-//        System.out.println(bandit.toString());
-//        System.out.println(pikeman.toString());
-//        System.out.println(sniper.toString());
-//        System.out.println(crossbowman.toString());
-//        System.out.println(plowman.toString());
-//
-//        System.out.println();
-//        System.out.println(mag.getInfo());
-//        System.out.println(monakh.getInfo());
-//        System.out.println(bandit.getInfo());
-//        System.out.println(pikeman.getInfo());
-//        System.out.println(sniper.getInfo());
-//        System.out.println(crossbowman.getInfo());
-//        System.out.println(plowman.getInfo());
 
         int teamSize = 10;
         for (int i = 1; i < teamSize + 1; i++) {
-            switch (new Random().nextInt(3) + 1) {
+            switch (new Random().nextInt(4) + 1) {
                 case 1:
-                    team1.add(new Crossbowman(BaseHeroTeam1.values()[0].getNumberTeam(), BaseHeroTeam1.values()[0].getHealth(), BaseHeroTeam1.values()[0].getName(), BaseHeroTeam1.values()[0].getX(), BaseHeroTeam1.values()[0].getY(), BaseHeroTeam1.values()[0].getIsLive(), BaseHeroTeam1.values()[0].getState(), BaseHeroTeam1.values()[0].getInitiative()));
+                    team1.add(new Mag(BaseHeroTeam1.values()[0].getNumberTeam(), BaseHeroTeam1.values()[0].getHealth(), BaseHeroTeam1.values()[0].getName(), 1, i, BaseHeroTeam1.values()[0].getIsLive(), BaseHeroTeam1.values()[0].getState(), BaseHeroTeam1.values()[0].getInitiative(), BaseHeroTeam1.values()[0].getMana()));
                     break;
                 case 2:
-                    team1.add(new Pikeman(BaseHeroTeam1.values()[1].getNumberTeam(), BaseHeroTeam1.values()[1].getHealth(), BaseHeroTeam1.values()[1].getName(), BaseHeroTeam1.values()[1].getX(), BaseHeroTeam1.values()[1].getY(), BaseHeroTeam1.values()[1].getIsLive(), BaseHeroTeam1.values()[1].getState(), BaseHeroTeam1.values()[1].getInitiative()));
+                    team1.add(new Bandit(BaseHeroTeam1.values()[1].getNumberTeam(), BaseHeroTeam1.values()[1].getHealth(), BaseHeroTeam1.values()[1].getName(), 1, i, BaseHeroTeam1.values()[1].getIsLive(), BaseHeroTeam1.values()[1].getState(), BaseHeroTeam1.values()[1].getInitiative()));
                     break;
                 case 3:
-                    team1.add(new Monakh(BaseHeroTeam1.values()[2].getNumberTeam(), BaseHeroTeam1.values()[2].getHealth(), BaseHeroTeam1.values()[2].getName(), BaseHeroTeam1.values()[2].getX(), BaseHeroTeam1.values()[2].getY(), BaseHeroTeam1.values()[2].getIsLive(), BaseHeroTeam1.values()[2].getState(), BaseHeroTeam1.values()[2].getInitiative()));
+                    team1.add(new Sniper(BaseHeroTeam1.values()[2].getNumberTeam(), BaseHeroTeam1.values()[2].getHealth(), BaseHeroTeam1.values()[2].getName(), 1, i, BaseHeroTeam1.values()[2].getIsLive(), BaseHeroTeam1.values()[2].getState(), BaseHeroTeam1.values()[2].getInitiative(), BaseHeroTeam1.values()[2].getReserveArrows()));
                     break;
                 case 4:
-                    team1.add(new Plowman(BaseHeroTeam1.values()[3].getNumberTeam(), BaseHeroTeam1.values()[3].getHealth(), BaseHeroTeam1.values()[3].getName(), BaseHeroTeam1.values()[3].getX(), BaseHeroTeam1.values()[3].getY(), BaseHeroTeam1.values()[3].getIsLive(), BaseHeroTeam1.values()[3].getState(), BaseHeroTeam1.values()[3].getInitiative()));
+                    team1.add(new Plowman(BaseHeroTeam1.values()[3].getNumberTeam(), BaseHeroTeam1.values()[3].getHealth(), BaseHeroTeam1.values()[3].getName(), 1, i, BaseHeroTeam1.values()[3].getIsLive(), BaseHeroTeam1.values()[3].getState(), BaseHeroTeam1.values()[3].getInitiative()));
                     break;
             }
         }
 
         for (int i = 1; i < teamSize + 1; i++) {
-            switch (new Random().nextInt(3) + 1) {
+            switch (new Random().nextInt(4) + 1) {
                 case 1:
-                    team2.add(new Sniper(BaseHeroTeam2.values()[0].getNumberTeam(), BaseHeroTeam2.values()[0].getHealth(), BaseHeroTeam2.values()[0].getName(), BaseHeroTeam2.values()[0].getX(), BaseHeroTeam2.values()[0].getY(), BaseHeroTeam2.values()[0].getIsLive(), BaseHeroTeam2.values()[0].getState(), BaseHeroTeam2.values()[0].getInitiative()));
+                    team2.add(new Monakh(BaseHeroTeam2.values()[0].getNumberTeam(), BaseHeroTeam2.values()[0].getHealth(), BaseHeroTeam2.values()[0].getName(), 10, i, BaseHeroTeam2.values()[0].getIsLive(), BaseHeroTeam2.values()[0].getState(), BaseHeroTeam2.values()[0].getInitiative(), BaseHeroTeam2.values()[0].getMana()));
                     break;
                 case 2:
-                    team2.add(new Bandit(BaseHeroTeam2.values()[1].getNumberTeam(), BaseHeroTeam2.values()[1].getHealth(), BaseHeroTeam2.values()[1].getName(), BaseHeroTeam2.values()[1].getX(), BaseHeroTeam2.values()[1].getY(), BaseHeroTeam2.values()[1].getIsLive(), BaseHeroTeam2.values()[1].getState(), BaseHeroTeam2.values()[1].getInitiative()));
+                    team2.add(new Pikeman(BaseHeroTeam2.values()[1].getNumberTeam(), BaseHeroTeam2.values()[1].getHealth(), BaseHeroTeam2.values()[1].getName(), 10, i, BaseHeroTeam2.values()[1].getIsLive(), BaseHeroTeam2.values()[1].getState(), BaseHeroTeam2.values()[1].getInitiative()));
                     break;
                 case 3:
-                    team2.add(new Mag(BaseHeroTeam2.values()[2].getNumberTeam(), BaseHeroTeam2.values()[2].getHealth(), BaseHeroTeam2.values()[2].getName(), BaseHeroTeam2.values()[2].getX(), BaseHeroTeam2.values()[2].getY(), BaseHeroTeam2.values()[2].getIsLive(), BaseHeroTeam2.values()[2].getState(), BaseHeroTeam2.values()[2].getInitiative()));
+                    team2.add(new Crossbowman(BaseHeroTeam2.values()[2].getNumberTeam(), BaseHeroTeam2.values()[2].getHealth(), BaseHeroTeam2.values()[2].getName(), 10, i, BaseHeroTeam2.values()[2].getIsLive(), BaseHeroTeam2.values()[2].getState(), BaseHeroTeam2.values()[2].getInitiative(), BaseHeroTeam2.values()[2].getReserveArrows()));
                     break;
                 case 4:
-                    team2.add(new Plowman(BaseHeroTeam2.values()[3].getNumberTeam(), BaseHeroTeam2.values()[3].getHealth(), BaseHeroTeam2.values()[3].getName(), BaseHeroTeam2.values()[3].getX(), BaseHeroTeam2.values()[3].getY(), BaseHeroTeam2.values()[3].getIsLive(), BaseHeroTeam2.values()[3].getState(), BaseHeroTeam2.values()[3].getInitiative()));
+                    team2.add(new Plowman(BaseHeroTeam2.values()[3].getNumberTeam(), BaseHeroTeam2.values()[3].getHealth(), BaseHeroTeam2.values()[3].getName(), 10, i, BaseHeroTeam2.values()[3].getIsLive(), BaseHeroTeam2.values()[3].getState(), BaseHeroTeam2.values()[3].getInitiative()));
                     break;
             }
         }
 
         System.out.println();
-        //       team1.add(BaseHeroTeam1.values()[0].getName());
-//        team1.add(BaseHeroTeam1.values()[1].getName());
-//        team1.add(BaseHeroTeam1.values()[2].getName());
-//        team1.add(BaseHeroTeam1.values()[3].getName());
-//
-//        team2.add(BaseHeroTeam2.values()[0].getName());
-//        team2.add(BaseHeroTeam2.values()[1].getName());
-//        team2.add(BaseHeroTeam2.values()[2].getName());
-//        team2.add(BaseHeroTeam2.values()[3].getName());
-
-
-//        for (int i = 0; i<4; i++){
-//            team1.add(BaseHeroTeam1.values()[new Random().nextInt(BaseHeroTeam1.values().length)].getName());
-//            team2.add(BaseHeroTeam2.values()[new Random().nextInt(BaseHeroTeam2.values().length)].getName());
-//        }
-
-//        System.out.println("Первая команда: ");
-//        for (int i = 0; i < team1.size(); i++) {
-//            System.out.println(i + 1 + ". " + team1.get(i));
-//        }
-//        System.out.println();
-//        System.out.println("Вторая команда: ");
-//        for (int i = 0; i < team2.size(); i++) {
-//            System.out.println(i + 1 + ". " + team2.get(i));
-//        }
-
-//        for (int i = 0; i < team1.size(); i++) {
-//            allTeam.add(team1.get(i));
-//        }
-//        for (int i = 0; i < team2.size(); i++) {
-//            allTeam.add(team2.get(i));
-//        }
 
         allTeam.addAll(team1);
         allTeam.addAll(team2);
         allTeam.sort(Person::compareTo);
 
+        View.view();
         Scanner in = new Scanner(System.in);
         while (true) {
-
-            View.view();
             in.nextLine();
             for (Person person : allTeam) {
                 if (team2.contains(person)) {
@@ -160,35 +110,9 @@ public class Main {
                 System.out.println("Team 1 (Green) win");
                 break;
             }
+            View.view();
         }
 
-
-//        System.out.println();
-//        System.out.println("Вce: ");
-//        for (int i = 0; i < allTeam.size(); i++) {
-//            System.out.println(i + 1 + ". " + allTeam.get(i));
-//        }
-
-
-//        double min = distance(BaseHeroTeam1.values()[0].getX(), BaseHeroTeam1.values()[0].getY(), BaseHeroTeam2.values()[0].getX(), BaseHeroTeam2.values()[0].getY());
-//        String teamember1 = BaseHeroTeam1.values()[0].getName();
-//        String teamember2 = BaseHeroTeam2.values()[0].getName();
-//        for (int i = 0; i < team1.size(); i++) {
-//            for (int j = 0; j < team2.size(); j++) {
-//                if (distance(BaseHeroTeam1.values()[i].getX(), BaseHeroTeam1.values()[i].getY(), BaseHeroTeam2.values()[j].getX(), BaseHeroTeam2.values()[j].getY()) < min) {
-//                    min = distance(BaseHeroTeam1.values()[i].getX(), BaseHeroTeam1.values()[i].getY(), BaseHeroTeam2.values()[j].getX(), BaseHeroTeam2.values()[j].getY());
-//                    teamember1 = BaseHeroTeam1.values()[i].getName();
-//                    teamember2 = BaseHeroTeam2.values()[j].getName();
-//                }
-//            }
-//        }
-
-
-//        System.out.println("Ближайшие противники: " + teamember1 + ", " + teamember2 + " и расстояние между ними " + min);
     }
 
-
-//    public static double distance(int x1, int y1, int x2, int y2) {
-//        return Math.sqrt(Math.pow(x2 - x1,2) + Math.pow(y2 - y1,2));
-//    }
 }

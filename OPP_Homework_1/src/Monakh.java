@@ -1,35 +1,47 @@
 import java.util.ArrayList;
 
 public class Monakh extends Person {
-    // Монах - могут вылечить, давать здоровье, энергию
+    // Маг - могут вылечить, давать здоровье, энергию
     public int giveHealph;
 
-    public Monakh(int numberTeam, int health, String name, int x, int y, boolean isLive, String state, int initiative) {
-        super(numberTeam, health, name, x, y, isLive, state, initiative);
+    public Monakh(int numberTeam, int health, String name, int x, int y, boolean isLive, String state, int initiative, double mana) {
+        super(numberTeam, health, name, x, y, isLive, state, initiative, mana);
     }
 
-//    public Person FindClosestEnemy(Monakh monakh, ArrayList<Person> team) {
-//        double min = distance(monakh.getX(), monakh.getY(), team.get(0).getX(), team.get(0).getY());
-//        Person teamember1 = monakh;
-//        for (int i = 0; i < team.size(); i++)
-//            if (distance(monakh.getX(), monakh.getY(), team.get(i).getX(), team.get(i).getY()) < min || team.get(i) != monakh) {
-//                min = distance(monakh.getX(), monakh.getY(), team.get(i).getX(), team.get(i).getY());
-//                teamember1 = team.get(i);
-//            }
-//        return teamember1;
-//    }
-
-
-    @Override
-    public void step(ArrayList<Person> team1, ArrayList<Person> team2) {
-        Person ClosestEnemy = FindClosestEnemy(team1);
-        getLive(ClosestEnemy);
+    public double getMana() {
+        return mana;
     }
 
     @Override
     public String getInfo() {
-        return super.getInfo();
+        return String.format(this.name + ", health = " + this.health + ", [" + coordinate_person.x + ", " + coordinate_person.y + "], state = " + this.state + ", mana = " + this.mana);
     }
 
+    @Override
+    public void step(ArrayList<Person> team1, ArrayList<Person> team2) {
+        if (!isLive) {
+            return;
+        }
 
+        if (isLive) {
+            Person ClosestEnemy = FindClosestEnemy(team2);
+            if (ClosestEnemy.health < health && mana > 0) {
+                haveLive(ClosestEnemy);
+                state = "Treat";
+                mana -= 1;
+            }
+            ClosestEnemy = FindClosestEnemy(team1);
+            if (mana >0 && (int) coordinate_person.distance(ClosestEnemy.coordinate_person) <= 1) {
+                doAttack(ClosestEnemy);
+                mana += 1;
+                state = "Attack";
+            } else {
+                move(ClosestEnemy.coordinate_person, team2);
+//                x +=1;
+                mana -= 1;
+                state = "Busy";
+            }
+            return;
+        }
+    }
 }
