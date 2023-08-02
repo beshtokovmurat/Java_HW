@@ -1,3 +1,5 @@
+package Persons;
+
 public enum BaseHero {
     Mag(50, "Mag", 0 , 1, true, "Fire",70), Monakh(50, "Monakh", 0 , 1, true, "Fire",70), Bandit(50, "Bandit", 0 , 1, true, "Fire",70), Pikeman(50, "Pikeman", 0 , 1, true, "Fire",70), Sniper(50, "Sniper", 0 , 1, true, "Fire",70), Crossbowman(50, "Crossbowman", 0 , 1, true, "Fire",70), Plowman(50, "Plowman", 0 , 1, true, "Fire",70);
 

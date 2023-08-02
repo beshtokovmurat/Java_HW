@@ -1,3 +1,5 @@
+package Persons;
+
 public enum BaseHeroTeam1 {
     Mag(1, 10, "Mag", 1 , 1, true, "Stand",8, 10.0), Bandit(1, 10, "Bandit", 1 , 2, true, "Stand",20),  Sniper(1, 10, "Sniper", 1 , 3, true, "Stand",70,5), Plowman(1, 10, "Plowman", 1, 4, true, "Stand",30);
 

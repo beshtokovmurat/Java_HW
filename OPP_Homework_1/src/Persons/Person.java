@@ -1,10 +1,14 @@
+package Persons;
+
 import java.util.ArrayList;
 
 public abstract class Person implements InGameInterface {
+    public static int x;
+    public static int y;
     public int initiative;
     //Человек
 
-    private int numberTeam, MaxHealth, x, y, moveDistance, arrows, damage, reserveArrows;
+    private int numberTeam, MaxHealth, moveDistance, arrows, damage, reserveArrows;
     protected int health;
     public String name, state = "Stand";
     public boolean isLive;

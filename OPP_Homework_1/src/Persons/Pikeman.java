@@ -1,11 +1,13 @@
+package Persons;
+
 import java.util.ArrayList;
 
-public class Bandit extends Person {
-    // Разбойник - боевые единицы, скорость передвижения, могут атаковать
+public class Pikeman extends Person {
+    // Копейщик - боевые единицы, скорость передвижения, могут атаковать
     public boolean hurt;
     public int speed;
 
-    public Bandit(int numberTeam, int health, String name, int x, int y, boolean isLive, String state, int initiative) {
+    public Pikeman(int numberTeam, int health, String name, int x, int y, boolean isLive, String state, int initiative) {
         super(numberTeam, health, name, x, y, isLive, state, initiative);
     }
 
@@ -20,7 +22,7 @@ public class Bandit extends Person {
             state = "Attack";
         } else {
             move(ClosestEnemy.coordinate_person, team2);
-//            x +=1;
+//            x -=1;
             state = "Moving";
         }
     }

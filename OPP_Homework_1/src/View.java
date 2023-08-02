@@ -1,3 +1,5 @@
+import Persons.*;
+
 import java.util.Collections;
 
 public class View {
@@ -30,7 +32,7 @@ public class View {
     private static String getChar(int x, int y) {
         String out = "| ";
         for (Person person : Main.allTeam) {
-            if (person.coordinate_person.x == x && person.coordinate_person.y == y) {
+            if (person.getCoords().get(0) == x && person.getCoords().get(1) == y) {
                 if (person.getHp() == 0) {
                     out = "|" + (AnsiColors.ANSI_RED + person.toString().charAt(6) + AnsiColors.ANSI_RESET);
                     break;

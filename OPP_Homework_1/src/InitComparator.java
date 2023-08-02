@@ -1,3 +1,5 @@
+import Persons.*;
+
 import java.util.Comparator;
 
 public class InitComparator implements Comparator<Person> {

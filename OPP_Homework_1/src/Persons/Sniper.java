@@ -1,3 +1,5 @@
+package Persons;
+
 import java.util.ArrayList;
 
 public class Sniper extends Person {

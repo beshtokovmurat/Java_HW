@@ -1,3 +1,5 @@
+package Persons;
+
 public enum BaseHeroTeam2 {
     Monakh(2, 10, "Monakh", 10 , 1, true, "Stand",50,10.0), Pikeman(2, 10, "Pikeman", 10 , 2, true, "Stand",100), Crossbowman(2, 10, "Crossbowman", 10 , 3, true, "Stand",70, 5), Plowman(2, 10, "Plowman", 10 , 4, true, "Stand",30);
 
