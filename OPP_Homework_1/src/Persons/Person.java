@@ -179,6 +179,7 @@ public abstract class Person implements InGameInterface {
 //    }
 
     public void move(Coordinate_person targetPosition, ArrayList<Person> team) {
+        //System.out.println(coordinate_person.containsByPos(coordinate_person.newPosition(targetPosition, team),team));
         if (!coordinate_person.containsByPos(coordinate_person.newPosition(targetPosition, team), team)) {
             for (int i = 0; i < moveDistance; i++) {
                 coordinate_person = coordinate_person.newPosition(targetPosition, team);

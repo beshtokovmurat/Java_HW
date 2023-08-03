@@ -22,7 +22,7 @@ public class Bandit extends Person {
             state = "Attack";
         } else {
             move(ClosestEnemy.coordinate_person, team2);
-//            x +=1;
+ //           x +=1;
             state = "Moving";
         }
     }
