@@ -4,34 +4,39 @@ import java.util.ArrayList;
 
 public class Plowman extends Person {
     // Крестьянин - могут передвигаться
-    public int speed;
-    public int Arrows;
+    public int rezervArrows;
 
-    public Plowman(int numberTeam, int health, String name, int x, int y, boolean isLive, String state, int initiative) {
-        super(numberTeam, health, name, x, y, isLive, state, initiative);
-    }
-
-    @Override
-    public void step(ArrayList<Person> team1, ArrayList<Person> team2) {
-        if (!isLive) {
-            state = "Died";
-            return;
-        }
-        if (isLive) {
-            Arrows++;
-            state = "Busy";
-        }
-
-        Person ClosestEnemy = FindClosestEnemy(team1);
-        if ((int) coordinate_person.distance(ClosestEnemy.coordinate_person) <= 1) {
-            doAttack(ClosestEnemy);
-            state = "Attack";
-        } else {
-        }
+    public Plowman(int numberTeam, int health, String name, int x, int y, boolean isLive, String state, int initiative, int rezervArrows) {
+        super(numberTeam, health, name, x, y, isLive, state, initiative, rezervArrows);
     }
 
     @Override
     public String getInfo() {
-        return super.getInfo();
+        return String.format(this.name + ", health = " + this.health + ", [" + coordinate_person.x + ", " + coordinate_person.y + "], state = " + this.state + ", rezervArrows = " + this.rezervArrows);
     }
+
+    @Override
+    public void step(ArrayList<Person> Enemy, ArrayList<Person> Friendly) {
+        if (!isLive) {
+            state = "Died";
+            return;
+        }
+        Person ClosestEnemy = FindClosest(Enemy);
+        if (isLive && (int) coordinate_person.distance(ClosestEnemy.coordinate_person) <= 1) {
+            doAttack(ClosestEnemy);
+            state = "Attack";
+        } else {
+            rezervArrows++;
+            state = "Busy";
+        }
+        Person ClosestPlowman = FindEnemyPlowman(Enemy);
+        if (isLive) {
+            doAttack(ClosestPlowman);
+            state = "Attack";
+        } else {
+            rezervArrows++;
+            state = "Busy";
+        }
+    }
+
 }

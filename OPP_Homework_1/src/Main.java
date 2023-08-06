@@ -61,10 +61,10 @@ public class Main {
                     team1.add(new Bandit(BaseHeroTeam1.values()[1].getNumberTeam(), BaseHeroTeam1.values()[1].getHealth(), BaseHeroTeam1.values()[1].getName(), 1, i, BaseHeroTeam1.values()[1].getIsLive(), BaseHeroTeam1.values()[1].getState(), BaseHeroTeam1.values()[1].getInitiative()));
                     break;
                 case 3:
-                    team1.add(new Sniper(BaseHeroTeam1.values()[2].getNumberTeam(), BaseHeroTeam1.values()[2].getHealth(), BaseHeroTeam1.values()[2].getName(), 1, i, BaseHeroTeam1.values()[2].getIsLive(), BaseHeroTeam1.values()[2].getState(), BaseHeroTeam1.values()[2].getInitiative(), BaseHeroTeam1.values()[2].getReserveArrows()));
+                    team1.add(new Sniper(BaseHeroTeam1.values()[2].getNumberTeam(), BaseHeroTeam1.values()[2].getHealth(), BaseHeroTeam1.values()[2].getName(), 1, i, BaseHeroTeam1.values()[2].getIsLive(), BaseHeroTeam1.values()[2].getState(), BaseHeroTeam1.values()[2].getInitiative(), BaseHeroTeam1.values()[2].getArrows()));
                     break;
                 case 4:
-                    team1.add(new Plowman(BaseHeroTeam1.values()[3].getNumberTeam(), BaseHeroTeam1.values()[3].getHealth(), BaseHeroTeam1.values()[3].getName(), 1, i, BaseHeroTeam1.values()[3].getIsLive(), BaseHeroTeam1.values()[3].getState(), BaseHeroTeam1.values()[3].getInitiative()));
+                    team1.add(new Plowman(BaseHeroTeam1.values()[3].getNumberTeam(), BaseHeroTeam1.values()[3].getHealth(), BaseHeroTeam1.values()[3].getName(), 1, i, BaseHeroTeam1.values()[3].getIsLive(), BaseHeroTeam1.values()[3].getState(), BaseHeroTeam1.values()[3].getInitiative(), BaseHeroTeam1.values()[3].getArrows()));
                     break;
             }
         }
@@ -78,10 +78,10 @@ public class Main {
                     team2.add(new Pikeman(BaseHeroTeam2.values()[1].getNumberTeam(), BaseHeroTeam2.values()[1].getHealth(), BaseHeroTeam2.values()[1].getName(), 10, i, BaseHeroTeam2.values()[1].getIsLive(), BaseHeroTeam2.values()[1].getState(), BaseHeroTeam2.values()[1].getInitiative()));
                     break;
                 case 3:
-                    team2.add(new Crossbowman(BaseHeroTeam2.values()[2].getNumberTeam(), BaseHeroTeam2.values()[2].getHealth(), BaseHeroTeam2.values()[2].getName(), 10, i, BaseHeroTeam2.values()[2].getIsLive(), BaseHeroTeam2.values()[2].getState(), BaseHeroTeam2.values()[2].getInitiative(), BaseHeroTeam2.values()[2].getReserveArrows()));
+                    team2.add(new Crossbowman(BaseHeroTeam2.values()[2].getNumberTeam(), BaseHeroTeam2.values()[2].getHealth(), BaseHeroTeam2.values()[2].getName(), 10, i, BaseHeroTeam2.values()[2].getIsLive(), BaseHeroTeam2.values()[2].getState(), BaseHeroTeam2.values()[2].getInitiative(), BaseHeroTeam2.values()[2].getArrows()));
                     break;
                 case 4:
-                    team2.add(new Plowman(BaseHeroTeam2.values()[3].getNumberTeam(), BaseHeroTeam2.values()[3].getHealth(), BaseHeroTeam2.values()[3].getName(), 10, i, BaseHeroTeam2.values()[3].getIsLive(), BaseHeroTeam2.values()[3].getState(), BaseHeroTeam2.values()[3].getInitiative()));
+                    team2.add(new Plowman(BaseHeroTeam2.values()[3].getNumberTeam(), BaseHeroTeam2.values()[3].getHealth(), BaseHeroTeam2.values()[3].getName(), 10, i, BaseHeroTeam2.values()[3].getIsLive(), BaseHeroTeam2.values()[3].getState(), BaseHeroTeam2.values()[3].getInitiative(), BaseHeroTeam2.values()[3].getArrows()));
                     break;
             }
         }

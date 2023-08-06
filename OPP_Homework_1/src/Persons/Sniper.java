@@ -3,59 +3,52 @@ package Persons;
 import java.util.ArrayList;
 
 public class Sniper extends Person {
-    private int reserveArrows;
-    private int arrows;
 // Снайпер - имеют запас стрел
 
 
-    public Sniper(int numberTeam, int health, String name, int x, int y, boolean isLive, String state, int initiative, int reserveArrows) {
-        super(numberTeam, health, name, x, y, isLive, state, initiative, reserveArrows);
-    }
-
-    public int getReserveArrows() {
-        return reserveArrows;
+    public Sniper(int numberTeam, int health, String name, int x, int y, boolean isLive, String state, int initiative, int arrows) {
+        super(numberTeam, health, name, x, y, isLive, state, initiative, arrows);
     }
 
     @Override
     public String getInfo() {
-        return String.format(this.name + ", health = " + this.health + ", [" + coordinate_person.x + ", " + coordinate_person.y + "], state = " + this.state + ", Arrows = " + this.reserveArrows);
+        return String.format(this.name + ", health = " + this.health + ", [" + coordinate_person.x + ", " + coordinate_person.y + "], state = " + this.state + ", Arrows = " + this.arrows);
     }
 
     @Override
-    public void step(ArrayList<Person> team1, ArrayList<Person> team2) {
+    public void step(ArrayList<Person> Enemy, ArrayList<Person> Friendly) {
         if (!isLive) {
             return;
         }
 
         if (isLive) {
-            for (Person person : team2) {
-                if (person instanceof Person && person.state == "Stand" && arrows < 20 && this instanceof Sniper) {
-                    arrows += 1;
+            for (Person person : Friendly) {
+                if (person instanceof Person && person.state == "Stand" && arrows < 20 && person instanceof Sniper) {
+                    arrows++;
                     person.state = "Busy";
                     return;
                 }
             }
 
-            Person ClosestEnemy = FindClosestEnemy(team1);
-            if ((int) coordinate_person.distance(ClosestEnemy.coordinate_person) <= attackRange) {
-                if (arrows > 0 && attackRange != 1) {
-                    int damage=1;
-                    if (attackRange == 1) ClosestEnemy.getDamage(1);
-                    else ClosestEnemy.getDamage(damage);
-                    arrows -= 1;
+            Person ClosestEnemy = FindClosest(Enemy);
+            if ((int) coordinate_person.distance(ClosestEnemy.coordinate_person) <= 1) {
+                if (arrows > 0) {
+                    doAttack(ClosestEnemy);
+                    arrows--;
                     state = "Attack";
                     return;
                 } else {
-                    attackRange = 1;
-                    state = "->Melee";
+                    state = "Busy";
+                    Person ClosestPlowman = FindClosest(Friendly);
+                    HaveArrows(ClosestPlowman);
+                    arrows++;
                 }
             } else {
-                move(ClosestEnemy.coordinate_person, team2);
-//                x += 1;
+                move(ClosestEnemy.coordinate_person, Friendly);
                 state = "Moving";
                 return;
             }
-            if (team2.contains(Plowman.class)) {
+            if (Friendly.contains(Plowman.class)) {
                 return;
             }
             if (super.getHealth() == 0) {

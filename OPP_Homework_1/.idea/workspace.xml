@@ -11,74 +11,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="View.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/View.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="901">
-              <caret line="53" column="94" selection-start-line="53" selection-start-column="94" selection-end-line="53" selection-end-column="94" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Bandit.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Persons/Bandit.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="73" selection-start-line="5" selection-start-column="73" selection-end-line="5" selection-end-column="73" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Coordinate_person.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Persons/Coordinate_person.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="32" column="60" lean-forward="true" selection-start-line="32" selection-start-column="60" selection-end-line="32" selection-end-column="60" />
-              <folding>
-                <marker date="1690983038735" expanded="true" signature="1098:1332" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Person.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Persons/Person.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="186" column="9" lean-forward="true" selection-start-line="186" selection-start-column="9" selection-end-line="186" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InitComparator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/InitComparator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="8" column="61" selection-start-line="8" selection-start-column="61" selection-end-line="8" selection-end-column="61" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -120,12 +53,20 @@
         <option value="$PROJECT_DIR$/src/Crossbowman.java" />
         <option value="$PROJECT_DIR$/src/Person.java" />
         <option value="$PROJECT_DIR$/src/Plowman.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/InitComparator.java" />
         <option value="$PROJECT_DIR$/src/View.java" />
-        <option value="$PROJECT_DIR$/src/Persons/Bandit.java" />
         <option value="$PROJECT_DIR$/src/Persons/Coordinate_person.java" />
+        <option value="$PROJECT_DIR$/src/Persons/BaseHeroTeam1.java" />
+        <option value="$PROJECT_DIR$/src/Persons/BaseHeroTeam2.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/Persons/Sniper.java" />
+        <option value="$PROJECT_DIR$/src/Persons/Bandit.java" />
         <option value="$PROJECT_DIR$/src/Persons/Person.java" />
+        <option value="$PROJECT_DIR$/src/Persons/Plowman.java" />
+        <option value="$PROJECT_DIR$/src/Persons/Mag.java" />
+        <option value="$PROJECT_DIR$/src/Persons/Monakh.java" />
+        <option value="$PROJECT_DIR$/src/Persons/Crossbowman.java" />
+        <option value="$PROJECT_DIR$/src/Persons/Pikeman.java" />
       </list>
     </option>
   </component>
@@ -141,7 +82,10 @@
     <panes />
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Persons/Coordinate_person.java" />
+    <property name="last_opened_file_path" value="C:/LGX_project/game/desktop/src/com/mygdx/game/DesktopLauncher.java" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
@@ -165,7 +109,18 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="DesktopLauncher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.mygdx.game.DesktopLauncher" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mygdx.game.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="OPP_Homework_1" />
@@ -173,9 +128,14 @@
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
     </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.DesktopLauncher" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.DesktopLauncher" />
       </list>
     </recent_temporary>
   </component>
@@ -203,8 +163,8 @@
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="6" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.6131775" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.738576" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="7" />
       <window_info id="Designer" order="3" />
@@ -214,8 +174,8 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3995749" />
+      <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -227,30 +187,30 @@
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.9543039" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.90648246" />
       <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32943678" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3995749" />
+      <window_info id="Learn" order="5" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3995749" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info id="Capture Tool" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.23485653" />
       <window_info anchor="right" id="Maven Projects" order="6" />
-      <window_info id="Learn" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -262,87 +222,18 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Sniper.java" />
-    <entry file="file://$PROJECT_DIR$/src/Crossbowman.java" />
-    <entry file="file://$PROJECT_DIR$/src/Pikeman.java" />
-    <entry file="file://$PROJECT_DIR$/src/Bandit.java" />
-    <entry file="file://$PROJECT_DIR$/src/Mag.java" />
-    <entry file="file://$PROJECT_DIR$/src/Monakh.java" />
-    <entry file="file://$PROJECT_DIR$/src/Person.java" />
-    <entry file="file://$PROJECT_DIR$/OPP_Homework_1.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Base_Hero_team_1.java" />
-    <entry file="file://$PROJECT_DIR$/src/Base_Hero_team_2.java" />
-    <entry file="file://C:/Documents and Settings/Admin/Downloads/OPP_Homework_1/src/BaseHero.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://C:/Documents and Settings/Admin/Downloads/OPP_Homework_1/src/BaseHeroTeam1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="164" selection-start-line="1" selection-start-column="164" selection-end-line="1" selection-end-column="164" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Documents and Settings/Admin/Downloads/OPP_Homework_1/src/Bandit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Documents and Settings/Admin/Downloads/OPP_Homework_1/src/Crossbowman.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="574">
-          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Documents and Settings/Admin/Downloads/OPP_Homework_1/src/Mag.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="557">
-          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Documents and Settings/Admin/Downloads/OPP_Homework_1/src/Sniper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://C:/Documents and Settings/Admin/Downloads/OPP_Homework_1/src/BaseHeroTeam1.java" />
+    <entry file="file://C:/Documents and Settings/Admin/Downloads/OPP_Homework_1/src/Bandit.java" />
+    <entry file="file://C:/Documents and Settings/Admin/Downloads/OPP_Homework_1/src/Crossbowman.java" />
+    <entry file="file://C:/Documents and Settings/Admin/Downloads/OPP_Homework_1/src/Mag.java" />
+    <entry file="file://C:/Documents and Settings/Admin/Downloads/OPP_Homework_1/src/Sniper.java" />
     <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_192/src.zip!/java/lang/Object.java" />
     <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_192/src.zip!/java/util/Comparator.java" />
-    <entry file="file://C:/Documents and Settings/Admin/Downloads/OPP_Homework_1/src/Plowman.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Documents and Settings/Admin/Downloads/OPP_Homework_1/src/Person.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Documents and Settings/Admin/Downloads/OPP_Homework_1/src/Pikeman.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://C:/Documents and Settings/Admin/Downloads/OPP_Homework_1/src/Plowman.java" />
+    <entry file="file://C:/Documents and Settings/Admin/Downloads/OPP_Homework_1/src/Person.java" />
+    <entry file="file://C:/Documents and Settings/Admin/Downloads/OPP_Homework_1/src/Pikeman.java" />
     <entry file="file://$PROJECT_DIR$/src/target/Person.java" />
-    <entry file="file://C:/Documents and Settings/Admin/Downloads/OPP_Homework_1/src/Coordinate_person.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://C:/Documents and Settings/Admin/Downloads/OPP_Homework_1/src/Coordinate_person.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/util/ArrayList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
@@ -357,13 +248,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Documents and Settings/Admin/Downloads/OPP_Homework_1/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="73" column="197" lean-forward="true" selection-start-line="73" selection-start-column="165" selection-end-line="73" selection-end-column="197" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://C:/Documents and Settings/Admin/Downloads/OPP_Homework_1/src/Main.java" />
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_171/src.zip!/java/util/Comparator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="166">
@@ -376,16 +261,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Gameinterface.java" />
     <entry file="file://$PROJECT_DIR$/src/BaseHero.java" />
-    <entry file="file://J:/Murat/GeekBrains/GB_1_четверть/GB_JAVA/Java_курс/Java_HW/OPP_Homework_1/src/Mag.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://J:/Murat/GeekBrains/GB_1_четверть/GB_JAVA/Java_курс/Java_HW/OPP_Homework_1/src/Mag.java" />
     <entry file="file://$PROJECT_DIR$/src/BaseHeroTeam1.java" />
     <entry file="file://$PROJECT_DIR$/src/BaseHeroTeam2.java" />
     <entry file="file://$PROJECT_DIR$/src/Coordinate_person.java" />
     <entry file="file://$PROJECT_DIR$/src/StepGet.java" />
-    <entry file="file://$PROJECT_DIR$/../oop_course_gb-main/oop_course_gb-main/sem2/AllAvengers/InGameInterface.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../oop_course_gb-main/oop_course_gb-main/sem2/AllAvengers/InGameInterface.java" />
     <entry file="file://$PROJECT_DIR$/src/InGameInterface.java" />
     <entry file="file://$PROJECT_DIR$/src/Bandit.java" />
     <entry file="file://$PROJECT_DIR$/src/Sniper.java" />
@@ -395,59 +276,201 @@
     <entry file="file://$PROJECT_DIR$/src/Plowman.java" />
     <entry file="file://$PROJECT_DIR$/src/Person.java" />
     <entry file="file://$PROJECT_DIR$/src/Monakh.java" />
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/InitComparator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="85">
+          <caret line="8" column="61" selection-start-line="8" selection-start-column="61" selection-end-line="8" selection-end-column="61" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/View.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
+        <state relative-caret-position="43">
           <caret line="53" column="94" selection-start-line="53" selection-start-column="94" selection-end-line="53" selection-end-column="94" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Persons/Bandit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="73" selection-start-line="5" selection-start-column="73" selection-end-line="5" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/InitComparator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="8" column="61" selection-start-line="8" selection-start-column="61" selection-end-line="8" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Persons/Coordinate_person.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="60" lean-forward="true" selection-start-line="32" selection-start-column="60" selection-end-line="32" selection-end-column="60" />
+        <state relative-caret-position="201">
+          <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Persons/BaseHeroTeam1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-128">
+          <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Persons/BaseHeroTeam2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-282">
+          <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Persons/Mag.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="935">
+          <caret line="55" selection-start-line="16" selection-start-column="1" selection-end-line="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/LGX_project/game/desktop/src/com/mygdx/game/DesktopLauncher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
           <folding>
-            <marker date="1690983038735" expanded="true" signature="1098:1332" ph="..." />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Persons/Monakh.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="485">
+          <caret line="37" column="21" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Persons/Sniper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="39" column="24" selection-start-line="39" selection-start-column="24" selection-end-line="39" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Persons/Crossbowman.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="59" column="1" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Persons/Bandit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="33" selection-start-line="10" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Persons/Pikeman.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="32" column="5" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Persons/Plowman.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Persons/Person.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="186" column="9" lean-forward="true" selection-start-line="186" selection-start-column="9" selection-end-line="186" selection-end-column="9" />
+        <state relative-caret-position="282">
+          <caret line="218" column="34" selection-start-line="218" selection-start-column="18" selection-end-line="218" selection-end-column="34" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="83" column="83" selection-start-line="83" selection-start-column="42" selection-end-line="83" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/LGX_project/game/desktop/src/com/mygdx/game/DesktopLauncher.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://C:/LGX_project/game/desktop/src/com/mygdx/game/DesktopLauncher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>OPP_Homework_1</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

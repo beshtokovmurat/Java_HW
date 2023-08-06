@@ -11,7 +11,6 @@ public class Coordinate_person {
         this.y = y;
         xy.add(0, x);
         xy.add(1, y);
-        //return xy;
     }
 
 
