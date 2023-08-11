@@ -2,6 +2,8 @@ import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+import static com.sun.jmx.snmp.ThreadContext.contains;
+
 public class Main {
 //
 //    Напишите приложение, которое будет запрашивать у пользователя следующие данные в произвольном порядке, разделенные пробелом:
@@ -34,16 +36,33 @@ public class Main {
     static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) throws FileNotExist {
-        String[] Person;
+        String[] Person, FIO = new String[0];
+        String BirthDay = null, Pol = null;
+        int NumberPhone = 0;
         File file = new File("Person.txt");
-        while (true) {
+        boolean flag = true;
+        while (flag) {
             try {
-                Person = prompt("Введите через два пробела:\n 1) фамилию, имя, отчество в виде одной строки; \n 2) дату рождения в формате dd.mm.yyyy; \n 3) номер телефона как целое беззнаковое число \n 4) пол в виде символа латиницей f или m \n");
-                for(int i = 0; i<Person.length; i++) System.out.println(Person[i]);
+                Person = prompt("Введите через два пробела следующую информацию:\n 1) фамилию, имя, отчество в виде одной строки; \n 2) дату рождения в формате dd.mm.yyyy; \n 3) номер телефона как целое беззнаковое число \n 4) пол в виде символа латиницей f или m \n");
                 checkAmount(Person);
                 for (int i = 0; i < Person.length; i++) {
-                    checkFormat(Person, i);
+                    System.out.println(Person[i] + " " + Person.length);
+                    if (Person[i].contains(" ")) {
+                        FIO = prompt(Person[i]);
+                    } else if (Person[i].contains(".")) {
+                        BirthDay = Person[i];
+                    } else if ((Person[i].equals("f")) || (Person[i].equals("m"))) {
+                        Pol = Person[i];
+                    } else if (Integer.valueOf(Person[i]) == Integer.parseInt(Person[i])) {
+                        NumberPhone = Integer.valueOf(Person[i]);
+                    }else if (Person[i].contains("exit")){return;}
+                    checkFormat(Person);
                 }
+                System.out.println("Отвечено на " + Person.length + "пункта");
+                System.out.println("ФИО: " + FIO[0] + " " + FIO[1] + " "+ FIO[2]);
+                System.out.println("Дата рождения: " + BirthDay) ;
+                System.out.println("Пол: " + Pol);
+                System.out.println("NumberPhone: " + String.valueOf(NumberPhone)) ;
                 ArrayList<String> people = new ArrayList<>(Arrays.asList(Person));
                 writeFile(people, file);
             } catch (RuntimeException e) {
@@ -56,30 +75,30 @@ public class Main {
     // Запрос у пользователя данных:
     public static String[] prompt(String msg) {
         System.out.println(msg);
-        return scanner.nextLine().split(" ");
+        return scanner.nextLine().split("  ");
     }
 
     // Проверка формата введённых данных:
-    public static void checkFormat(String[] Person, int i) {
-        switch (i) {
-            case 0: // Проверка фамилии
-                if (checkString(Person[0]))
-                    throw new StringException(-1);
-            case 1: // Проверка имени
-                if (checkString(Person[1]))
-                    throw new StringException(-1);
-            case 2: // Проверка отчества
-                if (checkString(Person[2]))
-                    throw new StringException(-1);
-            case 3: // Проверка даты
-                if (!dateValidator(Person[3])) throw new StringException(-3);
-            case 4: // Проверка номера телефона
-                if (!checkString(Person[4]))
-                    throw new StringException(-2);
-            case 5: // Проверка пола
-                if (!Person[5].equals("f") && !Person[5].equals("m")) throw new StringException(-4);
-        }
+    public static void checkFormat(String[] FIO) {
+        // Проверка фамилии, имени, отчества
+        if (checkString(FIO[0]) && checkString(FIO[1]) && checkString(FIO[2]))
+            throw new StringException(1);
     }
+
+    public static void checkFormat(String Str) {
+        // Проверка даты
+        if (!dateValidator(Str)) {
+            throw new StringException(3);
+        } else
+            // Проверка пола
+            if (!Str.equals("f") && !Str.equals("m")) throw new StringException(4);
+    }
+
+    public static void checkFormat(int NumberPhone) {
+        if (!checkString(NumberPhone))
+            throw new StringException(2);
+    }
+
 
     // Проверка на String и Integer
     public static boolean checkString(String line) {
@@ -91,10 +110,21 @@ public class Main {
         }
     }
 
+    // Проверка на String и Integer
+    public static boolean checkString(int line) {
+        try {
+            Integer.valueOf(line);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
+
     // Проверка на количество введённых данных:
     public static void checkAmount(String[] Person) {
-        if (Person.length < 6) throw new AmountException(-1);
-        if (Person.length > 6) throw new AmountException(-3);
+        if (Person.length < 4) {
+            throw new AmountException(1);
+        } else if (Person.length > 4) throw new AmountException(2);
     }
 
     // Проверка валидности даты:
@@ -137,10 +167,10 @@ class AmountException extends RuntimeException {
     public AmountException(int error) {
         super();
         switch (error) {
-            case -1:
-                System.out.println("Вы ввели меньше данных, чем нужно.");
-            case -3:
-                System.out.println("Вы ввели больше данных, чем нужно.");
+            case 1:
+                System.out.println("Недостаточно информации.");
+            case 2:
+                System.out.println("Избыток информации.");
         }
     }
 }
@@ -149,13 +179,13 @@ class StringException extends NumberFormatException {
     public StringException(int error) {
         super();
         switch (error) {
-            case -1:
+            case 1:
                 System.out.println("Проверьте формат ввода: в ФИО должны быть только буквенные значения.");
-            case -2:
+            case 2:
                 System.out.println("Проверьте формат ввода: при вводе номера телефона должны быть только числовые значения.");
-            case -3:
+            case 3:
                 System.out.println("Проверьте формат ввода: дата должна быть в формате: dd.mm.yyyy");
-            case -4:
+            case 4:
                 System.out.println("Проверьте формат ввода: здесь нужно вводить либо f, либо m.");
         }
     }
