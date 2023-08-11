@@ -38,8 +38,7 @@ public class Main {
     public static void main(String[] args) throws FileNotExist {
         String[] Person = new String[6];
         String[] FIO = new String[3];
-        String BirthDay = null, Pol = null;
-        int NumberPhone = 0;
+        String BirthDay = null, Pol = null, NumberPhone = null;
         File file = new File("Person.txt");
         boolean flag = true;
         while (flag) {
@@ -55,33 +54,32 @@ public class Main {
 //                for (int i=0; i<Person.length; i++) System.out.println(Person[i]);
                 for (int i = 0; i < Person.length; i++) {
                     if (Person[i].equals("exit")) {
-                        System.out.println(Person[i]);
+//                        System.out.println(Person[i]);
                         flag = false;
                         break;
                     } else if (Person[i].contains(".")) {
                         BirthDay = Person[i];
-                        System.out.println(BirthDay);
+//                        System.out.println(BirthDay);
                         checkFormat(BirthDay);
                     } else if ((Person[i].equals("f")) || (Person[i].equals("m"))) {
                         Pol = Person[i];
-                        System.out.println(Pol);
+//                        System.out.println(Pol);
                         checkFormat(Pol);
                     } else if (Person[i].contains(" ")) {
                         FIO = Person[i].split(" ");
-                        System.out.println(FIO[0] + " " + FIO[1] + " " + FIO[2]);
+//                        System.out.println(FIO[0] + " " + FIO[1] + " " + FIO[2]);
                         checkFormat(FIO);
-                    } else if (!(Person[i].equals("exit")) && !(Person[i].contains(".")) && !(Person[i].equals("f")) && !(Person[i].equals("m")) && !(Person[i].contains(" "))) {
-                        NumberPhone = Integer.valueOf(Person[i]);
-                        System.out.println(NumberPhone);
-                        checkFormat(NumberPhone);
+                    } else {
+                       NumberPhone = Person[i];
+//                        checkFormat(NumberPhone);
                     }
                 }
-//                if (!Person[0].equals("exit")) {
-//                    System.out.println("ФИО: " + FIO[0] + " " + FIO[1] + " " + FIO[2]);
-//                    System.out.println("Дата рождения: " + BirthDay);
-//                    System.out.println("Пол: " + Pol);
-//                    System.out.println("NumberPhone: " + String.valueOf(NumberPhone));
-//                }
+                if (!Person[0].equals("exit")) {
+                    System.out.println("ФИО: " + FIO[0] + " " + FIO[1] + " " + FIO[2]);
+                    System.out.println("Дата рождения: " + BirthDay);
+                    System.out.println("Пол: " + Pol);
+                    System.out.println("NumberPhone: " + NumberPhone);
+                }
                 ArrayList<String> people = new ArrayList<>(Arrays.asList(Person));
                 writeFile(people, file);
             } catch (RuntimeException e) {
@@ -121,8 +119,8 @@ public class Main {
             if (!Str.contains(".") && !Str.equals("f") && !Str.equals("m")) throw new StringException(4);
     }
 
-    public static void checkFormat(int NumberPhone) {
-        if (!checkString(NumberPhone))
+    public static void checkFormat(long NumberPhone) {
+        if (!checkString((int) NumberPhone))
             throw new StringException(2);
     }
 
