@@ -36,9 +36,10 @@ public class Main {
     static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) throws FileNotExist {
-        String[] Person = new String[6];
+        String[] Person;
         String[] FIO = new String[3];
-        String BirthDay = null, Pol = null, NumberPhone = null;
+        String[] NumberPhone = new String[11];
+        String BirthDay = null, Pol = null;
         File file = new File("Person.txt");
         boolean flag = true;
         while (flag) {
@@ -54,31 +55,35 @@ public class Main {
 //                for (int i=0; i<Person.length; i++) System.out.println(Person[i]);
                 for (int i = 0; i < Person.length; i++) {
                     if (Person[i].equals("exit")) {
-//                        System.out.println(Person[i]);
                         flag = false;
                         break;
                     } else if (Person[i].contains(".")) {
                         BirthDay = Person[i];
-//                        System.out.println(BirthDay);
                         checkFormat(BirthDay);
                     } else if ((Person[i].equals("f")) || (Person[i].equals("m"))) {
                         Pol = Person[i];
-//                        System.out.println(Pol);
                         checkFormat(Pol);
                     } else if (Person[i].contains(" ")) {
                         FIO = Person[i].split(" ");
-//                        System.out.println(FIO[0] + " " + FIO[1] + " " + FIO[2]);
                         checkFormat(FIO);
                     } else {
-                       NumberPhone = Person[i];
-//                        checkFormat(NumberPhone);
+                        for (int j = 0; j < Person[i].length(); j++) {
+                            NumberPhone[j] = String.valueOf(Person[i].toCharArray()[j]);
+                            checkFormat(Person[i].toCharArray()[j]);
+                        }
+
                     }
                 }
                 if (!Person[0].equals("exit")) {
                     System.out.println("ФИО: " + FIO[0] + " " + FIO[1] + " " + FIO[2]);
                     System.out.println("Дата рождения: " + BirthDay);
                     System.out.println("Пол: " + Pol);
-                    System.out.println("NumberPhone: " + NumberPhone);
+                    System.out.print("NumberPhone: ");
+                    for (int j = 0; j < NumberPhone.length; j++) {
+                        System.out.print(String.valueOf(NumberPhone[j]));
+                    }
+                    System.out.println();
+                    System.out.println();
                 }
                 ArrayList<String> people = new ArrayList<>(Arrays.asList(Person));
                 writeFile(people, file);
@@ -119,8 +124,9 @@ public class Main {
             if (!Str.contains(".") && !Str.equals("f") && !Str.equals("m")) throw new StringException(4);
     }
 
-    public static void checkFormat(long NumberPhone) {
-        if (!checkString((int) NumberPhone))
+    public static void checkFormat(char NumberPhone) {
+//        System.out.println(NumberPhone);
+        if (!checkString(NumberPhone))
             throw new StringException(2);
     }
 
@@ -136,9 +142,9 @@ public class Main {
     }
 
     // Проверка на String и Integer
-    public static boolean checkString(int line) {
+    public static boolean checkString(char line) {
         try {
-            Integer.valueOf(line);
+            Integer.parseInt(String.valueOf(line));
             return true;
         } catch (NumberFormatException e) {
             return false;
@@ -198,13 +204,13 @@ class StringException extends NumberFormatException {
         super();
         switch (error) {
             case 1:
-                System.out.println("Проверьте формат ввода: в ФИО должны быть только буквенные значения.");
+                System.out.println(" Проверьте формат ввода: в ФИО должны быть только буквенные значения.");
             case 2:
-                System.out.println("Проверьте формат ввода: при вводе номера телефона должны быть только числовые значения.");
+                System.out.println(" Проверьте формат ввода: при вводе номера телефона должны быть только числовые значения.");
             case 3:
-                System.out.println("Проверьте формат ввода: дата должна быть в формате: dd.mm.yyyy");
+                System.out.println(" Проверьте формат ввода: дата должна быть в формате: dd.mm.yyyy");
             case 4:
-                System.out.println("Проверьте формат ввода: здесь нужно вводить либо f, либо m.");
+                System.out.println(" Проверьте формат ввода: здесь нужно вводить либо f, либо m.");
         }
     }
 }
