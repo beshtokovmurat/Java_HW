@@ -43,26 +43,51 @@ public class Main {
         boolean flag = true;
         while (flag) {
             try {
-                Person = prompt("Введите через два пробела следующую информацию:\n 1) фамилию, имя, отчество в виде одной строки; \n 2) дату рождения в формате dd.mm.yyyy; \n 3) номер телефона как целое беззнаковое число \n 4) пол в виде символа латиницей f или m \n");
+                Person = prompt(
+                        "Введите через пробел следующую информацию:\n " +
+                                "1) фамилию, имя, отчество в виде одной строки; \n " +
+                                "2) дату рождения в формате dd.mm.yyyy; \n " +
+                                "3) номер телефона как целое беззнаковое число \n " +
+                                "4) пол в виде символа латиницей f или m \n " +
+                                "или наберите exit, чтобы выйти \n");
                 checkAmount(Person);
-                for (int i = 0; i < Person.length; i++) {
-                    System.out.println(Person[i] + " " + Person.length);
-                    if (Person[i].contains(" ")) {
-                        FIO = prompt(Person[i]);
-                    } else if (Person[i].contains(".")) {
-                        BirthDay = Person[i];
-                    } else if ((Person[i].equals("f")) || (Person[i].equals("m"))) {
-                        Pol = Person[i];
-                    } else if (Integer.valueOf(Person[i]) == Integer.parseInt(Person[i])) {
-                        NumberPhone = Integer.valueOf(Person[i]);
-                    }else if (Person[i].contains("exit")){return;}
-                    checkFormat(Person);
+                for (String i:Person) System.out.println(i);
+                for (String i : Person) {
+                    if (i.equals("exit")) {
+                        flag = false;
+                        break;
+                    }
+                    if (i.contains(".")) {
+                        BirthDay = i;
+                        System.out.println(BirthDay);
+                        checkFormat(BirthDay);
+                    }
+                    if ((i.equals("f")) || (i.equals("m"))) {
+                        Pol = i;
+                        System.out.println(Pol);
+                        checkFormat(Pol);
+                    }
+                        if (Integer.valueOf(i) == Integer.parseInt(i)) {
+                        NumberPhone = Integer.valueOf(i);
+                        System.out.println(NumberPhone);
+                        checkFormat(NumberPhone);
+                    }
+                    if (!(i.equals("exit")) && !(i.contains(".")) && !((i.equals("f")) || (i.equals("m"))) && !(Integer.valueOf(i) == Integer.parseInt(i))) {
+                        FIO[0] = i;
+                        FIO[1] = i + 1;
+                        FIO[2] = i + 2;
+                        i += 2;
+                        System.out.println(i + " " + i + 1 + " " + i + 2);
+                        checkFormat(FIO);
+                    }
                 }
-                System.out.println("Отвечено на " + Person.length + "пункта");
-                System.out.println("ФИО: " + FIO[0] + " " + FIO[1] + " "+ FIO[2]);
-                System.out.println("Дата рождения: " + BirthDay) ;
-                System.out.println("Пол: " + Pol);
-                System.out.println("NumberPhone: " + String.valueOf(NumberPhone)) ;
+                if (!Person[0].equals("exit")) {
+                    System.out.println("Отвечено на " + Person.length + "пункта");
+                    System.out.println("ФИО: " + FIO[0] + " " + FIO[1] + " " + FIO[2]);
+                    System.out.println("Дата рождения: " + BirthDay);
+                    System.out.println("Пол: " + Pol);
+                    System.out.println("NumberPhone: " + String.valueOf(NumberPhone));
+                }
                 ArrayList<String> people = new ArrayList<>(Arrays.asList(Person));
                 writeFile(people, file);
             } catch (RuntimeException e) {
@@ -71,11 +96,19 @@ public class Main {
         }
     }
 
-
     // Запрос у пользователя данных:
     public static String[] prompt(String msg) {
         System.out.println(msg);
-        return scanner.nextLine().split("  ");
+        return scanner.nextLine().split(" ");
+    }
+
+    // Проверка на количество введённых данных:
+    public static void checkAmount(String[] Person) {
+        if (!Person[0].equals("exit") && Person.length < 6) {
+            throw new AmountException(1);
+        } else if (!Person[0].equals("exit") && Person.length > 6) {
+            throw new AmountException(2);
+        }
     }
 
     // Проверка формата введённых данных:
@@ -118,13 +151,6 @@ public class Main {
         } catch (NumberFormatException e) {
             return false;
         }
-    }
-
-    // Проверка на количество введённых данных:
-    public static void checkAmount(String[] Person) {
-        if (Person.length < 4) {
-            throw new AmountException(1);
-        } else if (Person.length > 4) throw new AmountException(2);
     }
 
     // Проверка валидности даты:
