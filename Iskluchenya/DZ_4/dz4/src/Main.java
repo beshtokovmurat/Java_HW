@@ -40,7 +40,6 @@ public class Main {
         String[] FIO = new String[3];
         String[] NumberPhone = new String[11];
         String BirthDay = null, Pol = null;
-        File file = new File("Person.txt");
         boolean flag = true;
         while (flag) {
             try {
@@ -85,6 +84,7 @@ public class Main {
                     System.out.println();
                     System.out.println();
                 }
+                File file = new File("C:/Users/Admin/Downloads/Iskluchenya/DZ_4//dz4/src/"+FIO[0]+".txt");
                 ArrayList<String> people = new ArrayList<>(Arrays.asList(Person));
                 writeFile(people, file);
             } catch (RuntimeException e) {
@@ -173,18 +173,22 @@ public class Main {
 
     // Запись в файл:
     public static void writeFile(ArrayList<String> people, File file) {
-        try (FileWriter fileWriter = new FileWriter(file, true)) {
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file));) {
             for (String s : people) {
-                fileWriter.write("<" + s + ">");
+                bufferedWriter.write("<" + s + ">");
             }
-            fileWriter.append('\n');
-            fileWriter.flush();
+            bufferedWriter.newLine();
+            bufferedWriter.close();
         } catch (
                 IOException e) {
             throw new RuntimeException(e);
+        }catch (Exception e)
+        {
+            e.printStackTrace();
         }
     }
 }
+
 
 // Exceptions:
 class AmountException extends RuntimeException {
