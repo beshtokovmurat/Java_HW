@@ -84,7 +84,7 @@ public class Main {
                     System.out.println();
                     System.out.println();
                 }
-                File file = new File("C:/Users/Admin/Downloads/Iskluchenya/DZ_4//dz4/src/"+FIO[0]+".txt");
+                File file = new File("C:/Users/Admin/Downloads/"+FIO[0]+".txt");
                 ArrayList<String> people = new ArrayList<>(Arrays.asList(Person));
                 writeFile(people, file);
             } catch (RuntimeException e) {
